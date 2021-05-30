@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+
 
 class Activities extends StatelessWidget{
 
@@ -26,7 +28,7 @@ Widget build(BuildContext context){
                   "TRAININGS",
                   style: TextStyle(
                       fontFamily: ('Lato'),
-                      color: Color(0xFFD1D1D8),
+                      color: Color(0xFF898989),
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold),
                 ),
@@ -55,6 +57,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                               Text(
@@ -62,6 +65,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                             ],
@@ -71,7 +75,7 @@ Widget build(BuildContext context){
                             "Master your \npasswords",
                             style: TextStyle(
                                 fontFamily: 'Lato',
-                                color: Colors.black,
+                                color: Color(0xFF241C52),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -114,12 +118,12 @@ Widget build(BuildContext context){
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(width: 8),
-                              //Expanded(child: Text("percent_indicator package")),
                               LinearPercentIndicator(
                                                    width: 100.0,
                     lineHeight: 8.0,
-                    percent: 0.5,
-                    progressColor: Colors.orange,
+                    percent: 2/3,
+                    progressColor: Color(0xFF37459C),
+                    backgroundColor: Color(0xFFEAEDFF),
                               )
                             ],
                           )
@@ -153,6 +157,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                               Text(
@@ -160,6 +165,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                             ],
@@ -169,7 +175,7 @@ Widget build(BuildContext context){
                             "Protect personal\n data",
                             style: TextStyle(
                                 fontFamily: 'Lato',
-                                color: Colors.black,
+                                color: Color(0xFF241C52),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -212,7 +218,13 @@ Widget build(BuildContext context){
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(width: 8),
-                              Expanded(child: Text("percent_indicator package"))
+                                                            LinearPercentIndicator(
+                                                   width: 100.0,
+                    lineHeight: 8.0,
+                    percent: 1/2,
+                    progressColor: Color(0xFF37459C),
+                    backgroundColor: Color(0xFFEAEDFF),
+                              )
                             ],
                           )
                         ],
@@ -228,7 +240,7 @@ Widget build(BuildContext context){
                   "CHECKUPS",
                   style: TextStyle(
                       fontFamily: ('Lato'),
-                      color: Color(0xFFD1D1D8),
+                      color: Color(0xFF898989),
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold),
                 ),
@@ -257,6 +269,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                               Text(
@@ -264,6 +277,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                             ],
@@ -273,7 +287,7 @@ Widget build(BuildContext context){
                             "Harden your social profiles",
                             style: TextStyle(
                                 fontFamily: 'Lato',
-                                color: Colors.black,
+                                color: Color(0xFF241C52),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -316,7 +330,13 @@ Widget build(BuildContext context){
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(width: 8),
-                              Expanded(child: Text("percent_indicator package"))
+                                                            LinearPercentIndicator(
+                                                   width: 100.0,
+                    lineHeight: 8.0,
+                    percent: 0/3,
+                    progressColor: Color(0xFF37459C),
+                    backgroundColor: Color(0xFFEAEDFF),
+                              )
                             ],
                           )
                         ],
@@ -348,6 +368,7 @@ Widget build(BuildContext context){
                                 "SOCIAL ENGINEERING",
                                 style: TextStyle(
                                     fontFamily: 'Lato',
+                                     fontWeight: FontWeight.bold,
                                     color: Color(0xFFD1D1D8),
                                     fontSize: 12),
                               ),
@@ -355,6 +376,7 @@ Widget build(BuildContext context){
                                 "PHISHING",
                                 style: TextStyle(
                                     fontFamily: 'Lato',
+                                     fontWeight: FontWeight.bold,
                                     color: Color(0xFFD1D1D8),
                                     fontSize: 12),
                               ),
@@ -365,7 +387,7 @@ Widget build(BuildContext context){
                             "Do your part against\nransomwares",
                             style: TextStyle(
                                 fontFamily: 'Lato',
-                                color: Colors.black,
+                                color: Color(0xFF241C52),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -408,7 +430,13 @@ Widget build(BuildContext context){
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(width: 8),
-                              Expanded(child: Text("percent_indicator package"))
+                                                            LinearPercentIndicator(
+                                                   width: 100.0,
+                    lineHeight: 8.0,
+                    percent: 4/4,
+                    progressColor: Color(0xFF5FD08D),
+                    backgroundColor: Color(0xFFEAEDFF),
+                              )
                             ],
                           )
                         ],
@@ -424,7 +452,7 @@ Widget build(BuildContext context){
                   "QUIZ",
                   style: TextStyle(
                       fontFamily: ('Lato'),
-                      color: Color(0xFFD1D1D8),
+                      color: Color(0xFF898989),
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold),
                 ),
@@ -453,6 +481,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                               Text(
@@ -460,6 +489,7 @@ Widget build(BuildContext context){
                                 style: TextStyle(
                                     fontFamily: 'Lato',
                                     color: Color(0xFFD1D1D8),
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 12),
                               ),
                             ],
@@ -469,7 +499,7 @@ Widget build(BuildContext context){
                             "Software updates and \ninstalls at home",
                             style: TextStyle(
                                 fontFamily: 'Lato',
-                                color: Colors.black,
+                                color: Color(0xFF241C52),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -512,7 +542,13 @@ Widget build(BuildContext context){
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(width: 8),
-                              Expanded(child: Text("percent_indicator package"))
+                                                            LinearPercentIndicator(
+                                                   width: 100.0,
+                    lineHeight: 8.0,
+                    percent: 2/3,
+                    progressColor: Color(0xFF37459C),
+                    backgroundColor: Color(0xFFEAEDFF),
+                              )
                             ],
                           )
                         ],
@@ -597,8 +633,13 @@ Widget build(BuildContext context){
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(width: 8),
-                              Expanded(child: Text("percent_indicator package"))
-                            ],
+                              LinearPercentIndicator(
+                                                   width: 100.0,
+                    lineHeight: 8.0,
+                    percent: 1/4,
+                    backgroundColor: Color(0xFFEAEDFF),
+                    progressColor: Color(0xFF37459C),
+                              )                            ],
                           )
                         ],
                       )),
