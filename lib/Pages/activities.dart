@@ -1,13 +1,126 @@
-
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+ Card printCard (String title,String imageasse, String tag1,String tag2,int points, int duration, String modulesCompleted) {
+                                List<String> progression;
+                                 progression=modulesCompleted.split('/');
+                                 
+                                int firstvalue=int.parse(progression[0]) ;
+                                int secondvalue=int.parse(progression[1]);
+                                print(firstvalue);
+                                print(secondvalue);
+                                
+                                int colorprogress=0xFF37459C;
+                                if(firstvalue/secondvalue==1)
+                                 colorprogress=0xFF5FD08D;
 
+   return Card(
+     
+                margin: EdgeInsets.symmetric(horizontal: 16),
+                child: Container(
+                  padding: const EdgeInsets.all(15),
+                  child: Row(
+                    
+                    children: <Widget>[
+                      Image.asset(
+                        imageasse,
+                        height: 104,
+                      ),
+                      SizedBox(width: 16),
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                tag1.toUpperCase(),
+                                style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Color(0xFFD1D1D8),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12),
+                              ),
+                              Text(
+                                tag2.toUpperCase(),
+                                style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Color(0xFFD1D1D8),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            title,
+                            style: TextStyle(
+                                fontFamily: 'Lato',
+                                color: Color(0xFF241C52),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.timer,
+                                color: Color(0xFFD1D1D8),
+                              ),
+                              SizedBox(width: 6),
+                              Text(
+                                '$duration min',
+                                style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Color(0xFFD1D1D8)),
+                              ),
+                              SizedBox(width: 20),
+                              Icon(
+                                Icons.star_border,
+                                color: Color(0xFFFFB900),
+                              ),
+                              SizedBox(width: 6),
+                              Text(
+                                '$points pts',
+                                style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Color(0xFFFFB900)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 8),
+                          Row(
+                            children: [
+                              Text(
+                                modulesCompleted,
+                                style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(width: 8),
 
-class Activities extends StatelessWidget{
+                              LinearPercentIndicator(
+                                width: 100.0,
+                                lineHeight: 8.0,
+                                percent: firstvalue/secondvalue,
+                                progressColor: Color(colorprogress),
+                                backgroundColor: Color(0xFFEAEDFF),
+                              )
+                            ],
+                          )
+                        ],
+                      )),
+                    ],
+                  ),
+                ),
+              );
+ }
 
-@override
-Widget build(BuildContext context){
-  return Scaffold(
+class Activities extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: Text(
           'ACTIVITIES',
@@ -20,6 +133,7 @@ Widget build(BuildContext context){
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(
@@ -34,205 +148,9 @@ Widget build(BuildContext context){
                 ),
               ),
               SizedBox(height: 20),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/trainings_1.png',
-                        height: 104,
-                      ),
-                      SizedBox(width: 16),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "IDENTIFICATION",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                              Text(
-                                "DIGITAL IDENTITY",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            "Master your \npasswords",
-                            style: TextStyle(
-                                fontFamily: 'Lato',
-                                color: Color(0xFF241C52),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                color: Color(0xFFD1D1D8),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '15min',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8)),
-                              ),
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFFFFB900),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '35pts',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFFFB900)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Text(
-                                '2/3',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 8),
-                              LinearPercentIndicator(
-                                                   width: 100.0,
-                    lineHeight: 8.0,
-                    percent: 2/3,
-                    progressColor: Color(0xFF37459C),
-                    backgroundColor: Color(0xFFEAEDFF),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
-              ),
+              printCard ('Master your passwords','assets/trainings_1.png', 'Identification','Digital identity',35, 15, '2/3'),
               SizedBox(height: 20),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/trainings_2.png',
-                        height: 104,
-                      ),
-                      SizedBox(width: 16),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "PROTECTION",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                              Text(
-                                "GDPR",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            "Protect personal\n data",
-                            style: TextStyle(
-                                fontFamily: 'Lato',
-                                color: Color(0xFF241C52),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                color: Color(0xFFD1D1D8),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '15min',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8)),
-                              ),
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFFFFB900),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '35pts',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFFFB900)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Text(
-                                '1/2',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 8),
-                                                            LinearPercentIndicator(
-                                                   width: 100.0,
-                    lineHeight: 8.0,
-                    percent: 1/2,
-                    progressColor: Color(0xFF37459C),
-                    backgroundColor: Color(0xFFEAEDFF),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
-              ),
+              printCard('Protect personal data','assets/trainings_2.png', 'Protection','GDPR',35,15,'1/2'),
               Padding(
                 padding: const EdgeInsets.only(
                     right: 35.0, left: 30.0, top: 35.0, bottom: 15.0),
@@ -246,205 +164,11 @@ Widget build(BuildContext context){
                 ),
               ),
               SizedBox(height: 20),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/trainings_1.png',
-                        height: 104,
-                      ),
-                      SizedBox(width: 16),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "SOCIAL NETWORK",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                              Text(
-                                " PRIVACY",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            "Harden your social profiles",
-                            style: TextStyle(
-                                fontFamily: 'Lato',
-                                color: Color(0xFF241C52),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                color: Color(0xFFD1D1D8),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '5min',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8)),
-                              ),
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFFFFB900),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '10pts',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFFFB900)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Text(
-                                '0/3',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 8),
-                                                            LinearPercentIndicator(
-                                                   width: 100.0,
-                    lineHeight: 8.0,
-                    percent: 0/3,
-                    progressColor: Color(0xFF37459C),
-                    backgroundColor: Color(0xFFEAEDFF),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
-              ),
+              printCard('Harden your social profiles','assets/trainings_1.png', 'social network','privacy',5,10,'0/3'),
+
               SizedBox(height: 20),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/trainings_2.png',
-                        height: 104,
-                      ),
-                      SizedBox(width: 16),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "SOCIAL ENGINEERING",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                     fontWeight: FontWeight.bold,
-                                    color: Color(0xFFD1D1D8),
-                                    fontSize: 12),
-                              ),
-                              Text(
-                                "PHISHING",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                     fontWeight: FontWeight.bold,
-                                    color: Color(0xFFD1D1D8),
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            "Do your part against\nransomwares",
-                            style: TextStyle(
-                                fontFamily: 'Lato',
-                                color: Color(0xFF241C52),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                color: Color(0xFFD1D1D8),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '5min',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8)),
-                              ),
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFFFFB900),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '10pts',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFFFB900)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Text(
-                                '4/4',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 8),
-                                                            LinearPercentIndicator(
-                                                   width: 100.0,
-                    lineHeight: 8.0,
-                    percent: 4/4,
-                    progressColor: Color(0xFF5FD08D),
-                    backgroundColor: Color(0xFFEAEDFF),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
-              ),
+              printCard('Do your part against ransomwares','assets/trainings_2.png', 'social engineering','phishing',5,10,'4/4'),
+              
               Padding(
                 padding: const EdgeInsets.only(
                     right: 35.0, left: 30.0, top: 35.0, bottom: 15.0),
@@ -458,199 +182,13 @@ Widget build(BuildContext context){
                 ),
               ),
               SizedBox(height: 20),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/trainings_1.png',
-                        height: 104,
-                      ),
-                      SizedBox(width: 16),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "UPDATE",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                              Text(
-                                "SOFTWARE",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            "Software updates and \ninstalls at home",
-                            style: TextStyle(
-                                fontFamily: 'Lato',
-                                color: Color(0xFF241C52),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                color: Color(0xFFD1D1D8),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '10min',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8)),
-                              ),
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFFFFB900),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '15pts',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFFFB900)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Text(
-                                '2/3',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 8),
-                                                            LinearPercentIndicator(
-                                                   width: 100.0,
-                    lineHeight: 8.0,
-                    percent: 2/3,
-                    progressColor: Color(0xFF37459C),
-                    backgroundColor: Color(0xFFEAEDFF),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
-              ),
+              printCard('Software updates and installs at home','assets/trainings_1.png', 'update','software',10,15,'2/3'),
               SizedBox(height: 20),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/trainings_2.png',
-                        height: 104,
-                      ),
-                      SizedBox(width: 16),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                          
-                            children: [
-                              Text(
-                                "PROTECTION",
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8),
-                                    fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            "Protect your browser\nat home",
-                            style: TextStyle(
-                                fontFamily: 'Lato',
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.timer,
-                                color: Color(0xFFD1D1D8),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '10min',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFD1D1D8)),
-                              ),
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFFFFB900),
-                              ),
-                              SizedBox(width: 6),
-                              Text(
-                                '15pts',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Color(0xFFFFB900)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Text(
-                                '1/4',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 8),
-                              LinearPercentIndicator(
-                                                   width: 100.0,
-                    lineHeight: 8.0,
-                    percent: 1/4,
-                    backgroundColor: Color(0xFFEAEDFF),
-                    progressColor: Color(0xFF37459C),
-                              )                            ],
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
-              ),
+              printCard('Protect your browser at home','assets/trainings_2.png', 'Protection','',10,15,'1/4'),
             ],
           ),
         ),
       ),
     );
-}
+  }
 }
