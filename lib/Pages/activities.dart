@@ -6,9 +6,6 @@ import 'package:percent_indicator/percent_indicator.dart';
                                  
                                 int firstvalue=int.parse(progression[0]) ;
                                 int secondvalue=int.parse(progression[1]);
-                                print(firstvalue);
-                                print(secondvalue);
-                                
                                 int colorprogress=0xFF37459C;
                                 if(firstvalue/secondvalue==1)
                                  colorprogress=0xFF5FD08D;
